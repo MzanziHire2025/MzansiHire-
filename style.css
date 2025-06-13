@@ -18,6 +18,7 @@
     max-width: var(--max-width);
     margin: auto;
     padding: 5rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -30,10 +31,16 @@
     font-weight: 700;
     color: var(--text-dark);
     text-align: center;
+    
+}
+
+.section_container h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .section_header span {
     color: var(--primary-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .section_description {
@@ -42,6 +49,19 @@
     color: var(--text-dark);
     line-height: 1.75rem;
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.offer_container p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.offer_container h4{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.offer_card p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn{
@@ -69,6 +89,10 @@
 
 .logo span{
     color: #ff0000;
+}
+
+.nav_logo a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 img {
@@ -142,6 +166,7 @@ nav{
 .nav_links a {
     font-weight: 500;
     color: var(--text-dark);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .nav_links a:hover {
@@ -238,21 +263,21 @@ nav{
 }
 
 .header_container > img:nth-child(1) {
-    top: 30%;
-    left: 1rem;
-    transform: translate(-50%, -50%);
+    top: 75%;
+    left: 15%;
+    transform: translate( -50%);
 }
 
 .header_container > img:nth-child(2) {
-    top: 30%;
-    left: 20%;
+    top: 20%;
+    left: 3rem;
     transform: translateY(-50%);
 }
 
 .header_container > img:nth-child(3) {
-    top: 75%;
-    right: 25%;
-    transform: translate(-50%, -50%);
+    top: 49%;
+    right: 15%;
+    transform: translate( -50%);
 }
 
 .header_container > img:nth-child(4) {
@@ -261,13 +286,14 @@ nav{
     transform: translate(-50%, -50%);
 }
 
+
 .header_container > img:nth-child(5) {
     top: 75%;
     right: 1rem;
     transform: translate(-50%);
 }
 .header_container > img:nth-child(6) {
-    top: 65%;
+    top: 40%;
     left: 20%;
     transform: translate(-50%, -50%);
 }
@@ -323,6 +349,7 @@ nav{
 
 .steps_card p{
     color: var(--text-dark);
+    
 }
 
 .explore_grid {
@@ -339,7 +366,7 @@ nav{
 }
 
 .explore_card:hover{
-    background-color: rgb(217, 220, 224);
+    background-color: var(--primary-color);
 }
 
 .explore_card span{
@@ -388,7 +415,7 @@ nav{
 
 .explore_card:hover span{
     color: var(--white);
-    background-color: #0e0e0f;
+    background-color: #000000;
 
 }
 
@@ -398,11 +425,14 @@ nav{
     font-weight: 700;
     color: var(--text-dark);
     transition: .3s;
+    text-decoration: underline;
 }
 
 .explore_card:hover h4{
-    color: var(--white);
+    color: hwb(0 83% 15%);
 }
+
+
 
 .explore_card:hover p{
     color: var(--white);
@@ -411,6 +441,7 @@ nav{
 .explore_card p{
     color: var(--text-dark);
     transition: 0.3s;
+    
 }
 
 .explore_btn{
@@ -418,9 +449,14 @@ nav{
 }
 
 .job_grid{
-    margin-top: 4rem;
+    margin-top: 3rem;
     display: grid;
     gap: 1rem;
+   
+}
+
+.job_card a{
+    color: var(--text-dark);
 }
 
 .job_card{
@@ -449,18 +485,20 @@ nav{
 
 }
 
-.job_card h6{
+.job_card h5{
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-dark);
     transition: 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .job_card h6{
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--text-light);
     transition: 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .job_card h4{
@@ -469,12 +507,19 @@ nav{
     font-weight: 700;
     color: var(--text-dark);
     transition: 0.3s;
+    text-decoration: underline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .job_card p{
     margin-bottom: 1rem;
     color: var(--text-dark);
     transition: 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.job_card h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .job_card_footer {
@@ -491,6 +536,7 @@ nav{
     font-weight: 500;
     border-radius: 5px;
     transition: 0.3s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .job_card_footer span:nth-child(1) {
@@ -509,7 +555,7 @@ nav{
 }
 
 .job_card_footer span:nth-child(4) {
-    color: #0a55d7;
+    color: #ffa200;
     background-color: #e5e5e5;
 }
 
@@ -522,6 +568,10 @@ nav{
     color: var(--text-dark);
 }
 
+.job_card:hover a{
+    color: var(--text-dark);
+}
+
 .job_card:hover :is(h3, P){
     color: var(--text-light);
 }
@@ -530,9 +580,97 @@ nav{
     color: var(--white);
 }
 
+.offer_grid{
+    margin-top: 4rem;
+    display: grid;
+    gap: 2rem 1rem;
+}
+
+.offer_card img{
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.offer_details {
+    display: flex;
+    align-items: flex-start;
+}
+
+.offer_details span{
+    font-size: 2rem;
+    font-weight: 800;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--text-dark);
+    padding-right: 1rem;
+}
+
+.offer_details div{
+    padding-left: 1rem;
+    border-left: 2px solid var(--primary-color);
+}
+
+.offer_details h4{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.offer_details p{
+    color: rgb(158, 158, 158);
+}
+
+.footer_container{
+    display: grid;
+    gap: 4rem 2 rem;
+}
+
+.footer_logo{
+    margin-bottom: 2rem;
+}
+
+.footer_col p{
+    max-width: 400px;
+    color: rgb(64, 64, 64);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer_col h4 {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
 
 
 
+.footer_links a{
+    color: var(--primary-color);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer_links a:hover{
+    color: var(--primary-color-dark);
+}
+
+.footer_links a span{
+    font-size: 1.25rem;
+}
+
+.footer_links i{
+    color: var(--primary-color);
+    
+}
+
+.footer_links i:hover{
+    color: var(--primary-color-dark);
+}
+
+.footer_bar{
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: rgb(89, 88, 88);
+    text-align: center;
+}
 
 @media (width > 540px) {
     .steps_grid {
@@ -543,7 +681,14 @@ nav{
     }
 
     .job_grid{
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .offer_grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .offer_container{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -585,12 +730,22 @@ nav{
 .steps_card:nth-child(2n 1){
     transform: translateY(2rem);
  }
+ .explore_grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+ .offer_grid{
+    grid-template-columns: repeat(2, 1fr);
+ }
+ .job_grid{
+    grid-template-columns: repeat(3, 1fr);
+ }
+ .footer_container{
+    grid-template-columns: repeat(5, 1fr);
+ }
+ .footer_col:nth-child(1){
+    grid-column: 1/3;
+ }
 }
-
-.explore_grid{
-    grid-template-columns: repeat(4, 1fr);
-}
-
 
 
 @media (width > 1024px) {
