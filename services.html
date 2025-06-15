@@ -1,75 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>services</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Services | Mzanzihire</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #0800ff 2%, #ff5100 95%);
+      color: #222;
+    }
+    .header {
+      background: rgba(34, 34, 34, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 48px 20px 24px 20px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .header h1 {
+      margin: 0 0 12px 0;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+    }
+    .header p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin: 40px 0;
+      padding: 0 20px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 32px 24px;
+      max-width: 320px;
+      min-width: 240px;
+      flex: 1 1 260px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .back-button-container {
+      text-align: center;
+     margin-bottom: 40px;
+   }
+
+    .back-button {
+      background-color: #0800ff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+     font-size: 1rem;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: background-color 0.3s, transform 0.2s;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .back-button:hover {
+       background-color: #ff5100;
+       transform: scale(1.05);
+      }
+    .back-button:focus {
+      outline: none;
+      box-shadow: #ff5100;
+      }
+
+
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+    .service-image img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      border: 3px solid #ff5100;
+      background: #eee;
+    }
+    .service-title {
+      color: #0800ff;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .service-desc {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 0;
+    }
+    @media (max-width: 900px) {
+      .services-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="header">
+    <h1>Our Services</h1>
+    <p>Discover how Mzanzihire can help you connect, grow, and succeed.</p>
+  </div>
+  <div class="services-container">
+    <div class="service-card">
+      <div class="service-image">
+        <img src="assets/istockphoto-2054738963-1024x1024.jpg" alt="Job Listings" />
+      </div>
+      <div class="service-title">Job Listings</div>
+      <div class="service-desc">
+        Access thousands of curated job opportunities from top employers across South Africa.
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-image">
+        <img src="assets/download.webp" alt="Talent Search" />
+      </div>
+      <div class="service-title">Talent Search</div>
+      <div class="service-desc">
+        Employers can find the best candidates using our advanced search and filtering tools.
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-image">
+        <img src="assets/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="Career Guidance" />
+      </div>
+      <div class="service-title">Career Guidance</div>
+      <div class="service-desc">
+        Get expert advice, CV tips, and interview coaching to boost your career prospects.
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-image">
+        <img src="assets/istockphoto-1349094945-1024x1024.jpg" alt="Support" />
+      </div>
+      <div class="service-title">Support</div>
+      <div class="service-desc">
+        Our friendly team is here to help you every step of the way—contact us anytime!
 
-     <section class="section_container offer_container" id="Service">
-        <h2 class="section_header">What We <span>Offer</span></h2>
-        <p class="section_description">
-            Explore the Benefits and Services We Provide to Enhance Your Job Search and Career Success.
-        </p>
-        <div class="offer_grid">
-            <div class="offer_card">
-                <img src="assets/istockphoto-1866121862-1024x1024.jpg" alt="offer">
-                <div class="offer_details">
-                    <span>01</span>
-                    <div>
-                        <h4>Job Search</h4>
-                        <p>
-                            Find the job of your Dream.
-                        </p>
-                    </div>
-                </div>
-            </div>
-              <div class="offer_card">
-                <img src="assets/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="offer">
-                <div class="offer_details">
-                    <span>02</span>
-                    <div>
-                        <h4>Job Recommendation</h4>
-                        <p>
-                           Personalized job matches tailored to your skills and preferences.
-                        </p>
-                    </div>
-                </div>
-            </div>
-              <div class="offer_card">
-                <img src="assets/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg" alt="offer">
-                <div class="offer_details">
-                    <span>03</span>
-                    <div>
-                        <h4>Create & Build Portfolio</h4>
-                        <p>
-                             Showcase your expertise with professional portfolio design.
-                        </p>
-                    </div>
-                </div>
-            </div>
-             <div class="offer_card">
-                <img src="assets/andrew-neel-cckf4TsHAuw-unsplash.jpg" alt="offer">
-                <div class="offer_details">
-                    <span>04</span>
-                    <div>
-                        <h4>Career Consultation</h4>
-                        <p>
-                           Receive expert advice to navigate your career path.
-                        </p>
-                    </div>
-                </div>
-        </div>
-    </section>
-
-
-
-
-
-
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="main.js"></script>
+      </div>
+    </div>
+  </div>
+  <div class="back-button-container">
+  <button onclick="history.back()" class="back-button">← Go Back</button>
+  </div> 
 </body>
 </html>
