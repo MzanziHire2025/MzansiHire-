@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Listings | Mzanzihire</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #009688 0%, #fbc02d 100%);
+      color: #222;
+    }
+    .header {
+      background: rgba(34, 34, 34, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 48px 20px 24px 20px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .header h1 {
+      margin: 0 0 12px 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+    .header p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 32px 0 16px 0;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-bar input, .search-bar select {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      min-width: 180px;
+      outline: none;
+    }
+    .search-bar button {
+      background: #009688;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .search-bar button:hover {
+      background: #00796b;
+    }
+    .jobs-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin: 0 0 40px 0;
+      padding: 0 20px;
+    }
+    .job-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 28px 22px;
+      max-width: 340px;
+      min-width: 240px;
+      flex: 1 1 300px;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    .job-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+    .company-logo {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+      display: block;
+      border: 2px solid #009688;
+      background: #eee;
+    }
+    .job-title {
+      color: #009688;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .job-company {
+      color: #fbc02d;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .job-location {
+      font-size: 0.98rem;
+      color: #555;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .job-desc {
+      font-size: 0.97rem;
+      color: #444;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .job-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.93rem;
+      color: #888;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+    .apply-btn {
+      background: #fbc02d;
+      color: #222;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: auto;
+      width: 100%;
+    }
+    .apply-btn:hover {
+      background: #ffd54f;
+    }
+    @media (max-width: 900px) {
+      .jobs-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .job-card {
+        max-width: 95vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Job Listings</h1>
+    <p>Find your next opportunity with Mzanzihire</p>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search jobs or companies...">
+    <select id="locationSelect">
+      <option value="">All Locations</option>
+      <option value="Johannesburg">Johannesburg</option>
+      <option value="Cape Town">Cape Town</option>
+      <option value="Durban">Durban</option>
+      <option value="Pretoria">Pretoria</option>
+    </select>
+    <button onclick="filterJobs()">Search</button>
+  </div>
+  <div class="jobs-container" id="jobsContainer">
+    <!-- Job cards will be rendered here -->
+  </div>
+  <script>
+    // Sample job data (with logo property)
+    const jobs = [
+      {
+        title: "Frontend Developer",
+        company: "Tech Solutions",
+        location: "Johannesburg",
+        desc: "Build modern web interfaces using React and TypeScript.",
+        type: "Full-time",
+        posted: "2 days ago",
+        
+      },
+      {
+        title: "Marketing Specialist",
+        company: "Mzanzihire",
+        location: "Cape Town",
+        desc: "Drive digital campaigns and brand awareness.",
+        type: "Part-time",
+        posted: "1 day ago",
+        logo: "images/mzanzihire-logo.png"
+      },
+      {
+        title: "Data Analyst",
+        company: "Insight Analytics",
+        location: "Durban",
+        desc: "Analyze business data to support decision making.",
+        type: "Remote",
+        posted: "3 days ago",
+        logo: "images/insight-analytics-logo.png"
+      },
+      {
+        title: "HR Manager",
+        company: "PeopleFirst",
+        location: "Pretoria",
+        desc: "Lead HR initiatives and manage recruitment processes.",
+        type: "Full-time",
+        posted: "5 days ago",
+        logo: "images/peoplefirst-logo.png"
+      },
+      {
+        title: "Backend Developer",
+        company: "CodeCrafters",
+        location: "Cape Town",
+        desc: "Develop robust backend services using Node.js.",
+        type: "Full-time",
+        posted: "4 days ago",
+        logo: "images/codecrafters-logo.png"
+      },
+      {
+        title: "UI/UX Designer",
+        company: "Creative Minds",
+        location: "Johannesburg",
+        desc: "Design user-friendly interfaces for web and mobile apps.",
+        type: "Contract",
+        posted: "6 days ago",
+        logo: "images/creative-minds-logo.png"
+      },
+      {
+        title: "Project Manager",
+        company: "AgileWorks",
+        location: "Durban",
+        desc: "Manage software projects and coordinate teams.",
+        type: "Full-time",
+        posted: "1 week ago",
+        logo: "images/agileworks-logo.png"
+      },
+      {
+        title: "Sales Executive",
+        company: "BizGrowth",
+        location: "Pretoria",
+        desc: "Expand our client base and drive sales growth.",
+        type: "Full-time",
+        posted: "2 days ago",
+        logo: "images/bizgrowth-logo.png"
+      },
+      {
+        title: "Mobile App Developer",
+        company: "AppGen",
+        location: "Cape Town",
+        desc: "Create innovative mobile applications for Android and iOS.",
+        type: "Remote",
+        posted: "3 days ago",
+        logo: "images/appgen-logo.png"
+      },
+      {
+        title: "Content Writer",
+        company: "WordSmiths",
+        location: "Johannesburg",
+        desc: "Write engaging content for blogs and social media.",
+        type: "Part-time",
+        posted: "4 days ago",
+        logo: "images/wordsmiths-logo.png"
+      },
+      {
+        title: "Network Engineer",
+        company: "NetSecure",
+        location: "Durban",
+        desc: "Maintain and secure company network infrastructure.",
+        type: "Full-time",
+        posted: "5 days ago",
+        logo: "images/netsecure-logo.png"
+      },
+      {
+        title: "Customer Support Agent",
+        company: "HelpDesk",
+        location: "Pretoria",
+        desc: "Assist customers with queries and technical issues.",
+        type: "Full-time",
+        posted: "6 days ago",
+        logo: "images/helpdesk-logo.png"
+      }
+      // Add more jobs here as needed
+    ];
+
+    function renderJobs(filteredJobs) {
+      const container = document.getElementById('jobsContainer');
+      container.innerHTML = '';
+      if (filteredJobs.length === 0) {
+        container.innerHTML = '<p style="color:#fff;font-size:1.1rem;">No jobs found.</p>';
+        return;
+      }
+      filteredJobs.forEach(job => {
+        container.innerHTML += `
+          <div class="job-card">
+            <img src="${job.logo}" alt="${job.company} logo" class="company-logo">
+            <div class="job-title">${job.title}</div>
+            <div class="job-company">${job.company}</div>
+            <div class="job-location">${job.location}</div>
+            <div class="job-desc">${job.desc}</div>
+            <div class="job-meta">
+              <span>${job.type}</span>
+              <span>${job.posted}</span>
+            </div>
+            <button class="apply-btn">Apply Now</button>
+          </div>
+        `;
+      });
+    }
+
+    function filterJobs() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const location = document.getElementById('locationSelect').value;
+      const filtered = jobs.filter(job => {
+        const matchesSearch = job.title.toLowerCase().includes(search) || job.company.toLowerCase().includes(search);
+        const matchesLocation = location === "" || job.location === location;
+        return matchesSearch && matchesLocation;
+      });
+      renderJobs(filtered);
+    }
+
+    // Initial render
+    renderJobs(jobs);
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>

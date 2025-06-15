@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Openings</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* --- Add these styles to your style.css if not already present --- */
+    .go-back-btn {
+      margin: 24px 0 12px 24px;
+      padding: 10px 22px;
+      background: #3804bd;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition:  0.2s;
+    }
+    .go-back-btn:hover {
+      background: #f60a0a;
+    }
+    .job-search-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .job-search-bar input {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      min-width: 220px;
+      outline: none;
+    }
+    .job-search-bar button {
+      background: #fbc02d;
+      color: #222;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .job-search-bar button:hover {
+      background: #ffd54f;
+    }
+    @media (max-width: 900px) {
+      .job_grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .job_card {
+        max-width: 95vw;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Go Back Button -->
+    <button class="go-back-btn" onclick="window.history.back()">&#8592; Go Back</button>
+    <section class="search_container job_container" id="job">
+        <h2 class="section_header"><span>Latest & Top</span> Job Openings</h2>
+        <p class="section_description">
+            Discover Existing New Opportunities and High_Demand Positions Available Now in Top Industries and Companies!
+        </p>
+        <!-- Search Bar -->
+        <div class="job-search-bar">
+          <input type="text" id="jobSearchInput" placeholder="Search by job title, company, or location...">
+          <button onclick="filterJobs()">Search</button>
+        </div>
+        <div class="job_grid">
+            <!-- All your job_card blocks from your original code go here -->
+            <!-- Example job_card (repeat for each job) -->
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/f.png" alt="job">
+                    <div>
+                        <h5>DHL Group</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://careers.dhl.com/global/en/job/DPDHGLOBALAV292198ENGLOBALEXTERNAL/Yes-4-Youth-Gauteng">
+                         Yes 4 Youth Internships 2025
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  A diligent individual willing to take on new responsibilities and grow needed experience to apply for future endeavors. Someone with an adaptable mindset to acquire workplace knowledge and experience. Someone to fulfil all allocated loading / offloading tasks as per delivery procedure.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 13/06/2025</span>
+                    <span>Closing Date: Not Specified</span>
+                    <span>Location: Gauteng</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.webp" alt="job">
+                    <div>
+                        <h5>CSIR</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://candidate.csir.co.za/psc/hr/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=314338&PostingSeq=1">
+                        Work Integrated Learning Programme 2025 / 2026
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  The CSIR in partnership with MerSETA is offering Work Integrated Learning (WIL) opportunities to students who require experiential training in order to fulfil National Diploma requirements. The programme provides opportunities to students to gain practical experience that augment their theoretical knowledge under the guidance of more experienced professionals. This opportunity helps applicants bridge the gap between the academics and practical application, making them more employable.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 12/06/2025</span>
+                    <span>Closing Date: Not Specified</span>
+                    <span>Location: Pretoria</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/ws.png" alt="job">
+                    <div>
+                        <h5>W&R SETA and CCIEEC</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvXspVyZ0oICVweE8jSXKny1CrjbR7vI-7wOBD8PxX-1l20Q/viewform?pli=1">
+                        Internships for TVET Graduates
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  This application form is for TVET Diploma graduates interested in participating in an international exchange programme focused on online e-commerce funded by W&R SETA and CCIEEC. Successful candidates will undergo three months of pre-departure preparation training, followed by a 12-month placement at institutions and companies in China.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 14/06/2025</span>
+                    <span>Closing Date: 19/06/2025</span>
+                    <span>Location: South Africa</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (4).jpg" alt="job">
+                    <div>
+                        <h5>First National Bank (FNB)</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://firstrand.wd3.myworkdayjobs.com/en-US/FRB/job/Johannesburg/FirstJob-Learner_R35396">
+                        Learnership Opportunities 2025
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  The Learner role is a development role in which the role incumbent will be completing a formal, registered qualification while gaining work experience During the period of employment, the Learner will be responsible for delivering tasks in order to execute predefined work objectives such as research, analysis, administration, process and project work that add value to the business area The Learner will be expected to fulfil all the requirements of the qualification. Additional work-related training will be provided a required.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 12/06/2025</span>
+                    <span>Closing Date: 25/06/2025</span>
+                    <span>Location: Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (8).webp" alt="job">
+                    <div>
+                        <h5>Senwes</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://senwes.mcidirecthire.com/External/Application?Ref=TEkBhDYErs0qhHgueWeCgt_yRI-cnPLR1MRk1RR6CpovtNnuiVlYCxkOUAzXEEVwLWHqysUN8s5LzoIRoXaLEShW2TP_gUqlnAVbXKMN6a6xEPl-8hvML9RqZT68h8tnbfBOi-RzoFHxR9pp0Aj4ig">
+                        Graduate Internships 2025
+                    </a>
+                </h4>
+                
+                <p>
+                  Have you recently graduated or are you completing your studies this year? if you're ready to begin your professional journey, our Graduate program offers an excellent opportunity to gain hands-on industry experience, enhance your skills, and grow within a supportive and forward thinking organization.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 14/06/2025</span>
+                    <span>Closing Date: 31/07/2025</span>
+                    <span>Location: Klerksdorp</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (4).jpg" alt="job">
+                    <div>
+                        <h5>First National Bank</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://firstrand.wd3.myworkdayjobs.com/en-US/FRB/job/Johannesburg/FirstJob-Intern_R35392">
+                        FirstJob Internships 2025 / 2026
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  The Intern role is a development role in which the incumbent delivers on predefined work objectives while gaining structured work experience in the business area.
+                  During the period of employment, the Intern will perform varied tasks which may include research, analysis, administration, process and project work that add value to the business area.
+
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 13/06/2025</span>
+                    <span>Closing Date: 25/06/2025</span>
+                    <span>Location: Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (1).jpg" alt="job">
+                    <div>
+                        <h5>ABSA</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://absa.wd3.myworkdayjobs.com/en-US/ABSAcareersite/details/Financial-Adviser-AIFA--FAIS-_R-15967931-1?source=LinkedIn">
+                        Financial Adviser AIFA (FAIS)
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Source Utilisation: Obtain walk in client or data leads from the Bank staff in the branches. | Customer Experience: To provide service excellence and achieve customer satisfaction. | Risk and Control: Ensure that processes, control requirements and risk management frameworks that impact the area are documented and understood.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 13/06/2025</span>
+                    <span>Closing Date: 31/07/2025</span>
+                    <span>Location: Swellendam</span>
+                    <span>fULL Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (1).jpg" alt="job">
+                    <div>
+                        <h5>ABSA</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://absa.wd3.myworkdayjobs.com/en-US/ABSAcareersite/details/Senior-Tax-Manager--Insurance-Tax_R-15976408?source=LinkedIn">
+                        Senior Tax Manager: Insurance Tax
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Support the Head of Tax in executing the tax strategy, ensuring the effective delivery of tax advisory services that align with stakeholder needs, drive business performance, and facilitate sustainable growth.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 12/06/2025</span>
+                    <span>Closing Date: 21/06/2025</span>
+                    <span>Location: Sandton</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (1).jpg" alt="job">
+                    <div>
+                        <h5>ABSA</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://absa.wd3.myworkdayjobs.com/en-US/ABSAcareersite/details/XMLNAME-2-Relationship-Executive-Public-Sector--Kwa-Zulu-Natal--FAIS-_R-15976508?source=LinkedIn">
+                        Relationship Executive Public Sector
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Drive Financial Targets: Maintain primary ownership of a portfolio of Growth Account clients, differentiated by the level of complexity of the client base.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 13/06/2025</span>
+                    <span>Closing Date: 27/06/2025</span>
+                    <span>Location: KZN-Umhlanga</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (1).jpg" alt="job">
+                    <div>
+                        <h5>ABSA</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    
+                    <a href="https://absa.wd3.myworkdayjobs.com/en-US/ABSAcareersite/job/Financial-Resource-Management-Specialist_R-15976201">
+                        Financial Resource Management Specialist
+                    </a>
+
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Support the execution of BB's Financial Resource Management strategy by enabling effective capital, liquidity, and balance sheet utilisation.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 09/06/2025</span>
+                    <span>Closing Date: 17/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP.jpg" alt="job">
+                    <div>
+                        <h5>MOTUS AFTERMARKET PARTS</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://motusparts.erecruit.co/candidateapp/Jobs/View/MOT250605-6">
+                        Learnership: level 5 National Certificate in Wholesale & Retail Operations
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  Motus Aftermarket Parts is searching for unemployed youth who are passionate about the automotive parts industry to apply for our 12-month learnership programme.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 07/06/2025</span>
+                    <span>Closing Date: 12/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Part Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (2).jpg" alt="job">
+                    <div>
+                        <h5>BBL Security Products</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+
+                    <a href="https://www.pnet.co.za/jobs--Delivery-Driver-Brooklyn-Cape-Town-BBL-Security-Products--4013992-inline.html?rltr=6_6_25_seorl_m_0_0_0_0_0_0">
+                        Delivery Driver
+                    </a>
+
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                  BBL Security Products, a security hardware wholesaler based in Brooklyn Cape Town , is looking to employ a dynamic and energetic delivery driver to join our operations team nad play a pivotal role in our flourishing organisation.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 10/06/2025</span>
+                    <span>Closing Date: Unknown</span>
+                    <span>Location: Brooklyn Cape Town</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/R.jpg" alt="job">
+                    <div>
+                        <h5>Air Traffic Services (ATS)</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://atns.ci.hr/applicant/index.php?controller=Listings&method=view&listingid=cd00b91a-3b9d-4664-a2c2-86355d662cc2">
+                        Bursary Program
+                    </a>
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                    BBL Security Products, a security hardware wholesaler based in Brooklyn Cape Town , is looking to employ a dynamic and energetic delivery driver to join our operations team nad play a pivotal role in our flourishing organisation.
+                </p>
+                  
+                <div class="job_card_footer">
+                    <span>Posted: 10/06/2025</span>
+                    <span>Closing Date: Unknown</span>
+                    <span>Location: Kempton Park</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/download.webp" alt="job">
+                    <div>
+                        <h5>PV SOLAR</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://www.pnet.co.za/jobs--Operations-and-Maintenance-Engineer-PV-Solar-Pretoria-Prosperitas-Personnel--4005796-inline.html?rltr=60_10_25_seorl_m_0_0_0_0_0_0">
+                        Operations and Maintenance Engineer
+                    </a>
+
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                 Our client is a leader in the renewable energy industry. They are seeking a dedicated Operations & Maintenance Engineer to ensure the optimal performance, reliability, and safety of solar PV systems.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 10/06/2025</span>
+                    <span>Closing Date: Unknown</span>
+                    <span>Location: Pretoria</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (3).jpg" alt="job">
+                    <div>
+                        <h5>KING OF TILES</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>
+                    <a href="https://www.pnet.co.za/jobs--Steel-Sales-Representative-NW-MP-Mpumalanga-North-West-Home-of-Kot-pty-Ltd--4008740-inline.html?rltr=1_1_25_seorl_m_0_0_0_0_0_0">
+                        Steel Sales Representative
+                    </a>
+
+                </h4>
+                <h3>Job Description</h3>
+                <p>
+                 We are seeking a dynamic and results-driven External Steel Sales Representative to join our team. The ideal candidate will be responsible for developing new business, maintaining existing client relationships, and expanding our presence in the North West and Mpumalanga regions.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 10/06/2025</span>
+                    <span>Closing Date: Unknown</span>
+                    <span>Location: Mpumalanga & North West</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+            <div class="job_card">
+                <div class="job_card_header">
+                    <img src="assets/OIP (1).jpg" alt="job">
+                    <div>
+                        <h5>ABSA</h5>
+                        <h6>SOUTH AFRICA</h6>
+                    </div>
+                </div>
+                <h4>Financial Resource Management Specialist</h4>
+                <h3>Job Description</h3>
+                <p>
+                  Support the execution of BB's Financial Resource Management strategy by enabling effective capital, liquidity, and balance sheet utilisation.
+                </p>
+                <div class="job_card_footer">
+                    <span>Posted: 09/06/2025</span>
+                    <span>Closing Date: 17/06/2025</span>
+                    <span>Location: Emalahleni and Johannesburg</span>
+                    <span>Full Time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    // Search/filter function for job cards
+    function filterJobs() {
+      const input = document.getElementById('jobSearchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.job_card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? '' : 'none';
+      });
+    }
+    document.getElementById('jobSearchInput').addEventListener('keyup', filterJobs);
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+</body>
+</html>
