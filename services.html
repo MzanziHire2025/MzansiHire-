@@ -3,158 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Services | Mzanzihire</title>
+  <title>Services | Mzanzihire</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
-      background: linear-gradient(135deg, #0800ff 2%, #ff5100 95%);
+      background: #f4f6f8;
       color: #222;
+      min-height: 100vh;
     }
-    .header {
-      background: rgba(34, 34, 34, 0.9);
+    .go-back-icon {
+      display: inline-block;
+      
+      margin: 24px 0 12px 24px;
+      font-size: 2rem;
+      color: #3804bd;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(56,4,189,0.08);
+      transition:  0.2s, color 0.2s;
+      text-decoration: none;
+      vertical-align: middle;
+      padding: 8px 12px 8px 10px;
+    }
+    .go-back-icon:hover {
+      background: #f60a0a;
       color: #fff;
-      text-align: center;
-      padding: 48px 20px 24px 20px;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
     }
-    .header h1 {
-      margin: 0 0 12px 0;
-      font-size: 2.8rem;
+    .services-header {
+      background: linear-gradient(120deg, #22124b 60%, #fbc02d 100%);
+      color: #fff;
+      padding: 60px 20px 40px 20px;
+      text-align: center;
+      border-bottom-right-radius: 60px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+    .services-header h1 {
+      font-size: 2.5rem;
+      
+      margin-bottom: 12px;
+      font-weight: 800;
       letter-spacing: 2px;
     }
-    .header p {
+    .services-header h1 span:first-child {
+      color: #3804bd;
+    }
+    .services-header h1 span:last-child {
+      color: #f60a0a;
+    }
+    .services-header p {
       font-size: 1.2rem;
-      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 600px;
+      margin: 0 auto 18px auto;
+      color: #fffde7;
     }
-    .services-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px;
-      margin: 40px 0;
-      padding: 0 20px;
-    }
-    .service-card {
+    .services-content {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
       background: #fff;
       border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-      padding: 32px 24px;
-      max-width: 320px;
-      min-width: 240px;
-      flex: 1 1 260px;
-      text-align: center;
-      transition: transform 0.2s;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 36px 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
     }
-
-    .back-button-container {
-      text-align: center;
-     margin-bottom: 40px;
-   }
-
-    .back-button {
-      background-color: #0800ff;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-     font-size: 1rem;
-     border-radius: 8px;
-     cursor: pointer;
-     transition: background-color 0.3s, transform 0.2s;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .services-list {
+      flex: 2 1 320px;
+      min-width: 220px;
     }
-
-    .back-button:hover {
-       background-color: #ff5100;
-       transform: scale(1.05);
-      }
-    .back-button:focus {
-      outline: none;
-      box-shadow: #ff5100;
-      }
-
-
-    .service-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    }
-    .service-image img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 16px;
-      border: 3px solid #ff5100;
-      background: #eee;
-    }
-    .service-title {
-      color: #0800ff;
+    .services-list h2 {
+      color: #009688;
+      margin-bottom: 12px;
       font-size: 1.3rem;
-      margin-bottom: 10px;
       font-weight: 700;
     }
-    .service-desc {
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+      background: #f9fbe7;
+      border-radius: 12px;
+      padding: 18px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-item:hover {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      transform: translateY(-4px) scale(1.02);
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      color: #009688;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .service-info h3 {
+      margin: 0 0 6px 0;
+      color: #f79823;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .service-info p {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #555;
+      font-size: 0.98rem;
+    }
+    .services-image {
+      flex: 1 1 200px;
+      min-width: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .services-image img {
+      width: 180px;
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+    .services-footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 24px 10px;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
       font-size: 1rem;
-      color: #444;
-      margin-bottom: 0;
+      margin-top: 40px;
     }
     @media (max-width: 900px) {
-      .services-container {
+      .services-content {
         flex-direction: column;
-        align-items: center;
+        padding: 24px 10px;
+        gap: 20px;
+      }
+      .services-image {
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+      .services-header {
+        padding: 40px 10px 24px 10px;
+        border-bottom-right-radius: 30px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Our Services</h1>
-    <p>Discover how Mzanzihire can help you connect, grow, and succeed.</p>
+  
+  <div class="services-header">
+    <h1>
+      <span>Mzanzi</span><span>hire</span> Services
+    </h1>
+    <p>
+      Discover how Mzanzihire empowers job seekers and employers with innovative, easy-to-use solutions for the South African job market.
+    </p>
   </div>
-  <div class="services-container">
-    <div class="service-card">
-      <div class="service-image">
-        <img src="assets/istockphoto-2054738963-1024x1024.jpg" alt="Job Listings" />
+  <div class="services-content">
+    <div class="services-list">
+      <h2>What We Offer</h2>
+      <div class="service-item">
+        <div class="service-icon"><i class="ri-briefcase-4-line"></i></div>
+        <div class="service-info">
+          <h3>Job Listings</h3>
+          <p>
+            Access a wide range of curated job opportunities from top employers across South Africa, updated daily.
+          </p>
+        </div>
       </div>
-      <div class="service-title">Job Listings</div>
-      <div class="service-desc">
-        Access thousands of curated job opportunities from top employers across South Africa.
+      <div class="service-item">
+        <div class="service-icon"><i class="ri-user-search-line"></i></div>
+        <div class="service-info">
+          <h3>Talent Search</h3>
+          <p>
+            Employers can search for qualified candidates and connect directly with the best talent for their needs.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-image">
-        <img src="assets/download.webp" alt="Talent Search" />
+      <div class="service-item">
+        <div class="service-icon"><i class="ri-upload-cloud-2-line"></i></div>
+        <div class="service-info">
+          <h3>Easy Applications</h3>
+          <p>
+            Job seekers can apply for jobs quickly with a simple, user-friendly application process and CV upload.
+          </p>
+        </div>
       </div>
-      <div class="service-title">Talent Search</div>
-      <div class="service-desc">
-        Employers can find the best candidates using our advanced search and filtering tools.
+      <div class="service-item">
+        <div class="service-icon"><i class="ri-lightbulb-flash-line"></i></div>
+        <div class="service-info">
+          <h3>Career Resources</h3>
+          <p>
+            Access expert advice, CV templates, and interview tips to help you succeed in your career journey.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-image">
-        <img src="assets/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="Career Guidance" />
+      <div class="service-item">
+        <div class="service-icon"><i class="ri-mail-send-line"></i></div>
+        <div class="service-info">
+          <h3>Job Alerts</h3>
+          <p>
+            Subscribe to email alerts and never miss out on the latest job opportunities that match your profile.
+          </p>
+        </div>
       </div>
-      <div class="service-title">Career Guidance</div>
-      <div class="service-desc">
-        Get expert advice, CV tips, and interview coaching to boost your career prospects.
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-image">
-        <img src="assets/istockphoto-1349094945-1024x1024.jpg" alt="Support" />
-      </div>
-      <div class="service-title">Support</div>
-      <div class="service-desc">
-        Our friendly team is here to help you every step of the way—contact us anytime!
-
-      </div>
-    </div>
-  </div>
-  <div class="back-button-container">
-  <button onclick="history.back()" class="back-button">← Go Back</button>
-  </div> 
-</body>
-</html>
