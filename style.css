@@ -564,8 +564,12 @@ nav{
     background-color: #e5e5e5;
 }
 
-.job_card:hover :is(h5, h4,){
+.job_card:hover :is(h5, ){
     color: var(--text-dark);
+}
+
+.job_card:hover h4{
+    color: var(--primary-color-dark);
 }
 
 .job_card:hover a{
