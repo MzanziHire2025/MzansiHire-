@@ -467,13 +467,17 @@ nav{
 }
 
 .job_card:hover{
-    background-color: var(--primary-color);
+    background-color: rgb(143, 140, 140);
 }
 
 .job_card_header{
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.job_card_header li, ul{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .job_card img{
@@ -501,13 +505,28 @@ nav{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.job_card_link h5{
+    color: rgb(0, 0, 0);
+
+}
+
+.job_card_link h3{
+    color: #000000;
+}
+
+.job_card_link li{
+    color: var(--text-dark);
+}
+
+
+
 .job_card h4{
     margin-block: 1rem 0,5rem;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-dark);
     transition: 0.3s;
-    text-decoration: underline;
+    text-decoration: underline var(--primary-color-dark);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -572,11 +591,15 @@ nav{
     color: var(--primary-color-dark);
 }
 
+.job_card:hover h4 a{
+    color: var(--primary-color-dark);
+}
+
 .job_card:hover a{
     color: var(--text-dark);
 }
 
-.job_card:hover :is(h3, P){
+.job_card:hover :is(h3 ){
     color: var(--text-light);
 }
 
