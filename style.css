@@ -526,7 +526,7 @@ nav{
     font-weight: 700;
     color: var(--text-dark);
     transition: 0.3s;
-    text-decoration: underline var(--primary-color-dark);
+    text-decoration: underline var(--text-dark);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -588,7 +588,7 @@ nav{
 }
 
 .job_card:hover h4{
-    color: var(--primary-color-dark);
+    color: var(--text-dark);
 }
 
 .job_card:hover h4 a{
@@ -781,8 +781,4 @@ nav{
     }
     .explore_card{
         padding: 1.5rem;
-    }
-}
-
-
-
+    }
