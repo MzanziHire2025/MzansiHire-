@@ -775,10 +775,10 @@ nav{
 }
 
 
-@media (width > 1024px) {
+@media (width > 1024px) {}
     .steps_card{
         padding: 1.5rem;
     }
     .explore_card{
         padding: 1.5rem;
-    }
+    }
