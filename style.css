@@ -618,6 +618,10 @@ nav{
     border-radius: 5px;
 }
 
+.job_grid:active{
+    color: #b70909;
+}
+
 .offer_details {
     display: flex;
     align-items: flex-start;
