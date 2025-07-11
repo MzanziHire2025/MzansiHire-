@@ -786,3 +786,107 @@ nav{
     .explore_card{
         padding: 1.5rem;
     }
+
+ /* === Modern Footer Styles === */
+
+.mzfooter {
+  background: #101010;
+  color: #fff;
+  padding: 3rem 1rem 1.5rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.mzfooter_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mzfooter_col {
+  flex: 1 1 220px;
+}
+
+.mzfooter_logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3804bd;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.mzfooter_logo span {
+  color: #f60a0a;
+}
+
+.mzfooter_col h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #00b894;
+}
+
+.mzfooter_links {
+  list-style: none;
+  padding: 0;
+}
+
+.mzfooter_links li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.mzfooter_links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.mzfooter_links a:hover {
+  color: #00b894;
+}
+
+/* Social Media Icons */
+.mzfooter_socials {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.mzfooter_socials a {
+  background: #222;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: flex;
+  transition: 0.3s ease;
+}
+
+.mzfooter_socials a:hover {
+  background-color: #00b894;
+  transform: scale(1.1);
+}
+
+/* Bottom copyright bar */
+.mzfooter_bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mzfooter_container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mzfooter_socials {
+    justify-content: center;
+  }
+}
