@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Apply – Job Box</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c44367e?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.75); /* More transparent */
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(3px); /* Apply actual blur to the background */
+    }
+
+    .apply-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-left: 6px solid #3804bd;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 850px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 0.7s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .apply-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #f60a0a;
+      margin-bottom: 25px;
+    }
+
+    .apply-instructions p {
+      font-size: 1rem;
+      color: #222;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .apply-instructions a {
+      color: #3804bd;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .apply-instructions a:hover {
+      text-decoration: underline;
+    }
+
+    .note-section {
+      background-color: #f1f4ff;
+      padding: 18px;
+      border-left: 5px solid #3804bd;
+      margin-top: 25px;
+      border-radius: 8px;
+    }
+
+    .note-section strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .note-section ul {
+      padding-left: 20px;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .note-section ul li {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .apply-box {
+        padding: 20px;
+      }
+
+      .apply-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="apply-box">
+      <div class="apply-title">📄 How to Apply</div>
+      <div class="apply-instructions">
+        <p>
+          Interested applicants must submit:
+          <br />
+          ✅ A short cover letter<br />
+          ✅ Updated CV<br />
+          ✅ Proof of residence (e.g., Ward Councillor letter)<br />
+          ✅ Certified copies of certificates and ID (not older than 3 months)
+        </p>
+        <p>
+          Email your documents and quote the relevant <strong>reference number</strong> to:<br>
+          📧 <a href="mailto:jobapplications2@joburgtheatre.com">jobapplications2@joburgtheatre.com</a>
+        </p>
+      </div>
+
+      <div class="note-section">
+        <strong>📌 Please Note:</strong>
+        <ul>
+          <li>Shortlisted applicants will be contacted only.</li>
+          <li>Applicants must handle their own transport.</li>
+          <li>We support equal opportunity and encourage people with disabilities to apply.</li>
+          <li>Completion does not guarantee employment.</li>
+          <li>Response may take up to 1 month post closing date.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+``
+
+
