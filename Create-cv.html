@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Your CV | MzanziHire</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+   <li><a href="create-cv.html" class="cv-button">📝 Create Your CV</a></li>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #f60a0a;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+      color: #333;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .form-section {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #3804bd;
+      color: #fff;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #f60a0a;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 10px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   
+
+  <div id="cv-content">
+   
+        <div class="container">
+    <h2>📝 Create Your Professional CV</h2>
+    <form>
+
+      <div class="form-section">
+        <label>Full Name</label>
+        <input type="text" placeholder="Your full name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="e.g. +27 61 234 5678" required>
+
+        <label>Location</label>
+        <input type="text" placeholder="City, Province" required>
+      </div>
+
+      <div class="form-section">
+        <label>Career Objective</label>
+        <textarea rows="3" placeholder="A short summary of your career goals..." required></textarea>
+      </div>
+
+      <div class="form-section">
+        <label>Education</label>
+        <textarea rows="3" placeholder="e.g. Diploma in IT - Unisa - 2023" required></textarea>
+      </div>
+
+      <div class="form-section">
+        <label>Work Experience</label>
+        <textarea rows="3" placeholder="e.g. Cashier at Pick n Pay - 2021 to 2023" required></textarea>
+      </div>
+
+      <div class="form-section">
+        <label>Skills</label>
+        <textarea rows="2" placeholder="e.g. HTML, CSS, Microsoft Word, Communication" required></textarea>
+      </div>
+
+      <div class="form-section">
+        <label>Certifications</label>
+        <textarea rows="2" placeholder="e.g. Cybersecurity Basics - Google (2024)"></textarea>
+      </div>
+
+      <div class="form-section">
+        <label>Languages</label>
+        <input type="text" placeholder="e.g. English, Zulu, Xhosa">
+      </div>
+
+      <div class="form-section">
+        <label>References</label>
+        <textarea rows="2" placeholder="e.g. John Mokoena - Manager - 0721234567"></textarea>
+      </div>
+
+      <button type="submit">Generate / Download CV</button>
+
+    </form>
+  </div>
+
+
+
+
+ 
+
+</body>
+</html>
+
