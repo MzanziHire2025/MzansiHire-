@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Tips & Guide | MzanziHire - Ace Your Next Interview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #3804bd;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* New Menu styles */
+        .menu-btn {
+            display: none; /* Hidden on desktop */
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #3804bd;
+            background: none;
+            border: none;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px; /* Hidden off-screen */
+            width: 250px;
+            height: 100%;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 60px;
+        }
+
+        .side-menu.open {
+            left: 0; /* Slide in */
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 15px 20px;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .side-menu a:hover {
+            background-color: #f0f4f8;
+        }
+
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 999;
+        }
+
+        .menu-backdrop.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Quick Stats */
+        .quick-stats {
+            background: white;
+            padding: 40px 20px;
+            margin: -40px auto 0;
+            max-width: 1000px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #4a5568;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+        }
+
+        .tip-section {
+            margin-bottom: 50px;
+        }
+
+        .tip-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tip-cards {
+            display: grid;
+            gap: 20px;
+        }
+
+        .tip-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+            border-radius: 16px;
+            padding: 24px;
+            border-left: 6px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .tip-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tip-card p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .tip-card ul {
+            margin-top: 12px;
+            padding-left: 20px;
+            color: #4a5568;
+        }
+
+        .tip-card li {
+            margin-bottom: 8px;
+        }
+
+        /* Sidebar Cards */
+        .sidebar-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .sidebar-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .question-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .question-card h4 {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .answer {
+            background: rgba(255,255,255,0.1);
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 12px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Special Cards */
+        .featured-tip {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            border: none;
+        }
+
+        .featured-tip h3 {
+            color: white;
+        }
+
+        .featured-tip p,
+        .featured-tip li {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .warning-tip {
+            background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+            border-left-color: #e53e3e;
+        }
+
+        .warning-tip h3 {
+            color: #c53030;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-btn {
+                display: block; /* Show menu button on smaller screens */
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tip-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .tip-card:nth-child(2) { animation-delay: 0.1s; }
+        .tip-card:nth-child(3) { animation-delay: 0.2s; }
+        .tip-card:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">MZANZI<span style="color: #f60a0a;">HIRE</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutUs.html">About</a></li>
+                <li><a href="Job Listing.html">Jobs</a></li>
+                <li><a href="https://resumake.io/generator/templates">Create CV</a></li>
+                <li><a href="Resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <h1><i class="fas fa-handshake"></i> Interview Success Guide</h1>
+        <p>Master your interviews with expert tips, strategies, and insider secrets from top recruiters!</p>
+    </header>
+
+    <!-- Quick Stats -->
+    <div class="quick-stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">People Helped</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24hrs</div>
+                <div class="stat-label">Preparation Time</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Expert Tips</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-grid">
+            <div class="main-content">
+                <h1 class="section-title">🎯 Complete Interview Guide</h1>
+
+                <!-- Before the Interview -->
+                <div class="tip-section">
+                    <h2><i class="fas fa-clock"></i> Before the Interview</h2>
+                    <div class="tip-cards">
+                        <div class="tip-card featured-tip">
+                            <h3><i class="fas fa-search"></i> Research the Company</h3>
+                            <p>Spend at least 2-3 hours researching the company thoroughly. This shows genuine interest and helps you ask intelligent questions.</p>
+                            <ul>
+                                <li>Visit their website and read their mission, values, and recent news</li>
+                                <li>Check their social media profiles and recent posts</li>
+                                <li>Look up the company on LinkedIn and see who works there</li>
+                                <li>Research your interviewer on LinkedIn if possible</li>
+                                <li>Understand their products, services, and competitors</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip-card">
+                            <h3><i class="fas fa-file-alt"></i> Prepare Your Documents</h3>
+                            <p>Have all necessary documents ready and organized:</p>
+                            <ul>
+                                <li>Multiple copies of your CV (at least 5)</li>
+                                <li>Cover letter tailored to the position</li>
+                                <li>Portfolio or work samples (if applicable)</li>
+                                <li>References list with contact information</li>
+                                <li>Certificates and qualifications</li>
+                                <li>ID document or passport</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip-card">
+                            <h3><i class="fas fa-route"></i> Plan Your Journey</h3>
+                            <p>Never be late for an interview! Plan ahead:</p>
+                            <ul>
+                                <li>Know the exact address and how to get there</li>
+                                <li>Do a practice run the day before</li>
+                                <li>Plan to arrive 10-15 minutes early</li>
+                                <li>Have backup transport options</li>
+                                <li>Save the interviewer's contact number</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip-card">
+                            <h3><i class="fas fa-tshirt"></i> Dress for Success</h3>
+                            <p>Your appearance makes the first impression:</p>
+                            <ul>
+                                <li>Research the company dress code</li>
+                                <li>When in doubt, dress slightly more formal</li>
+                                <li>Ensure clothes are clean, ironed, and fit well</li>
+                                <li>Keep accessories minimal and professional</li>
+                                <li>Good personal hygiene is essential</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- During the Interview -->
+                <div class="tip-section">
+                    <h2><i class="fas fa-comments"></i> During the Interview</h2>
+                    <div class="tip-cards">
+                        <div class="tip-card">
+                            <h3><i class="fas fa-handshake"></i> Make a Great First Impression</h3>
+                            <p>The first 30 seconds are crucial:</p>
+                            <ul>
+                                <li>Arrive 10-15 minutes early</li>
+                                <li>Greet everyone politely, including reception</li>
+                                <li>Firm handshake and eye contact</li>
+                                <li>Smile genuinely and be enthusiastic</li>
+                                <li>Wait to be invited to sit</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip-card">
+                            <h3><i class="fas fa-eye"></i> Body Language Matters</h3>
+                            <p>Non-verbal communication is 55% of your message:</p>
+                            <ul>
+                                <li>Maintain good eye contact (not staring)</li>
+                                <li>Sit up straight and lean slightly forward</li>
+                                <li>Keep hands visible and use natural gestures</li>
+                                <li>Mirror the interviewer's energy level</li>
+                                <li>Avoid fidgeting or checking your phone</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip-card featured-tip">
+                            <h3><i class="fas fa-star"></i> Use the STAR Method</h3>
+                            <p>Structure your answers using STAR for behavioral questions:</p>
+                            <ul>
+                                <li><strong>Situation:</strong> Set the context</li>
+                                <li><strong>Task:</strong> Describe what needed to be done</li>
+                                <li><strong>Action:</strong> Explain what you did</li>
+                                <li><strong>Result:</strong> Share the outcome</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip-card">
+                            <h3><i class="fas fa-question-circle"></i> Ask Smart Questions</h3>
+                            <p>Show your interest by asking thoughtful questions:</p>
+                            <ul>
+                                <li>"What does success look like in this role?"</li>
+                                <li>"What are the biggest challenges facing the team?"</li>
+                                <li>"How would you describe the company culture?"</li>
+                                <li>"What opportunities are there for growth?"</li>
+                                <li>"What do you enjoy most about working here?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- After the Interview -->
+                <div class="tip-section">
+                    <h2><i class="fas fa-paper-plane"></i> After the Interview</h2>
+                    <div class="tip-cards">
+                        <div class="tip-card">
+                            <h3><i class="fas fa-envelope"></i> Send a Thank You Email</h3>
+                            <p>Follow up within 24 hours:</p>
+                            <ul>
+                                <li>Thank them for their time</li>
+                                <li>Reiterate your interest in the position</li>
+                                <li>Mention something specific from the conversation</li>
+                                <li>Attach any additional documents if requested</li>
+                                <li>Keep it brief and professional</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip-card warning-tip">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Common Mistakes to Avoid</h3>
+                            <p>Don't let these mistakes cost you the job:</p>
+                            <ul>
+                                <li>Being late or arriving too early (more than 15 minutes)</li>
+                                <li>Not researching the company</li>
+                                <li>Speaking negatively about previous employers</li>
+                                <li>Not having questions prepared</li>
+                                <li>Being too casual or overly familiar</li>
+                                <li>Lying or exaggerating on your CV</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Interview Checklist -->
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-check-circle"></i> Interview Checklist</h3>
+                    <ul class="checklist">
+                        <li>Research company thoroughly</li>
+                        <li>Prepare 5+ copies of CV</li>
+                        <li>Plan journey and arrive early</li>
+                        <li>Dress professionally</li>
+                        <li>Prepare STAR examples</li>
+                        <li>Prepare questions to ask</li>
+                        <li>Bring portfolio/work samples</li>
+                        <li>Practice common questions</li>
+                        <li>Get good night's sleep</li>
+                        <li>Send thank you email</li>
+                    </ul>
+                </div>
+
+                <!-- Common Questions -->
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-question"></i> Common Questions</h3>
+                    
+                    <div class="question-card">
+                        <h4>"Tell me about yourself"</h4>
+                        <div class="answer">
+                            Keep it professional and relevant. Structure: Current situation → Relevant experience → Why you're interested in this role. Keep it under 2 minutes.
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <h4>"Why do you want this job?"</h4>
+                        <div class="answer">
+                            Show you've researched the company. Connect your skills and interests to the role. Mention specific aspects that excite you.
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <h4>"What's your greatest weakness?"</h4>
+                        <div class="answer">
+                            Choose a real weakness that won't disqualify you. Explain how you're actively working to improve it. Show self-awareness.
+                        </div>
+                    </div>
+
+                    <div class="question-card">
+                        <h4>"Where do you see yourself in 5 years?"</h4>
+                        <div class="answer">
+                            Show ambition but be realistic. Align your goals with potential growth in the company. Demonstrate long-term thinking.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Tips -->
+                <div class="sidebar-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3 style="color: white;"><i class="fas fa-lightbulb"></i> Quick Tips</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.9);">💡 Practice your elevator pitch</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.9);">🎯 Prepare 3-5 STAR examples</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.9);">📱 Turn off your phone</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.9);">☕ Avoid coffee before interview</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.9);">😊 Smile and be positive</li>
+                        <li style="color: rgba(255,255,255,0.9);">🤝 Follow up within 24 hours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #2d3748; color: white; text-align: center; padding: 40px 20px; margin-top: 60px;">
+        <p>&copy; 2025 MzanziHire. Empowering careers across South Africa.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // New script for the side menu functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+            const menuBackdrop = document.getElementById('menu-backdrop');
+
+            if (menuToggle && sideMenu && menuBackdrop) {
+                const toggleMenu = () => {
+                    sideMenu.classList.toggle('open');
+                    menuBackdrop.classList.toggle('open');
+                };
+
+                // Open the menu when the button is clicked
+                menuToggle.addEventListener('click', toggleMenu);
+
+                // Close the menu when the backdrop is clicked
+                menuBackdrop.addEventListener('click', toggleMenu);
+
+                // Close the menu when a link inside it is clicked
+                sideMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', toggleMenu);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,181 +3,571 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us | Mzanzihire</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <title>About Us | MzanziHire - South Africa's Premier Job Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <style>
-    body {
-      
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f6f8;
-      color: #222;
-      min-height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
   
-
-    .about-header {
-      background: linear-gradient(120deg, #0800ff 60%, #ff5100 100%);
-      color: #fff;
-      padding: 60px 20px 40px 20px;
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 20px 80px;
       text-align: center;
-      border-bottom-right-radius: 60px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      position: relative;
+      overflow: hidden;
     }
-    .about-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+      opacity: 0.3;
     }
-    .about-header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 18px auto;
-      color: #fffde7;
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
     }
-    .about-content {
-      max-width: 900px;
-      margin: 40px auto 0 auto;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-      padding: 36px 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: flex-start;
-    }
-    .about-text {
-      flex: 2 1 320px;
-      min-width: 220px;
-    }
-    .about-text h2 {
-      color: #0800ff;
-      margin-bottom: 12px;
-      font-size: 1.3rem;
+    
+    .hero-section h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
       font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.2;
     }
-    .about-text p {
-      color: #444;
-      font-size: 1rem;
-      margin-bottom: 16px;
+    
+    .hero-section .tagline {
+      font-size: 1.3rem;
+      margin-bottom: 32px;
+      opacity: 0.95;
+      font-weight: 300;
     }
-    .about-image {
-      flex: 1 1 200px;
-      min-width: 160px;
+    
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      display: block;
+      color: #ffd700;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+    
+    .section {
+      margin-bottom: 80px;
+    }
+    
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2d3748;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #718096;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .story-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    
+    .story-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 24px;
+    }
+    
+    .story-content p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    .story-image {
+      position: relative;
+    }
+    
+    .story-image img {
+  width: 60%;
+  max-width: 400px;
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  display: block;
+}
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .value-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #f7fafc;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 2rem;
+      color: white;
     }
-    .about-image img {
-      width: 180px;
-      max-width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-    }
-    .about-values {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .value-card {
-      background: #f9fbe7;
-      border-radius: 12px;
-      padding: 18px 16px;
-      flex: 1 1 180px;
-      min-width: 140px;
-      text-align: center;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
-    }
-
-    .about-image img{
-        border-radius: 50%;
-    }
-
+    
     .value-card h3 {
-      color: #ff5100;
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 16px;
     }
+    
     .value-card p {
-      color: #555;
-      font-size: 0.98rem;
-      margin: 0;
-    }
-    .about-footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 24px 10px;
-      border-top-left-radius: 40px;
-      border-top-right-radius: 40px;
+      color: #718096;
       font-size: 1rem;
-      margin-top: 40px;
+      line-height: 1.6;
     }
-    @media (max-width: 900px) {
-      .about-content {
+    
+    .team-section {
+      background: #f8fafc;
+      padding: 80px 20px;
+      margin: 80px -20px;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .team-member {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+    
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+      font-weight: 600;
+    }
+    
+    .member-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 8px;
+    }
+    
+    .member-role {
+      color: #667eea;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    
+    .member-bio {
+      color: #718096;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      margin: 80px -20px 0;
+    }
+    
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .cta-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    .cta-text {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #5a67d8;
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .btn-secondary:hover {
+      background: white;
+      color: #2d3748;
+    }
+    
+    .footer {
+      background: #1a202c;
+      color: #a0aec0;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: #a0aec0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #667eea;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 20px 60px;
+      }
+      
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-stats {
+        gap: 30px;
+      }
+      
+      .story-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .cta-title {
+        font-size: 2rem;
+      }
+      
+      .cta-buttons {
         flex-direction: column;
-        padding: 24px 10px;
+        align-items: center;
+      }
+      
+      .footer-links {
+        flex-direction: column;
         gap: 20px;
-      }
-      .about-image {
-        justify-content: center;
-        margin-bottom: 18px;
-      }
-      .about-header {
-        padding: 40px 10px 24px 10px;
-        border-bottom-right-radius: 30px;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="about-header">
-    <h1> 
-        About 
-  <span style="color:#3804bd;">Mzanzi</span><span style="color:#f60a0a;">hire</span>
-   </h1>
-    <p>
-      Mzanzihire is dedicated to connecting South Africa’s brightest talent with the best opportunities. We believe in empowering people and businesses to grow, succeed, and make a difference.
-    </p>
-  </div>
-  <div class="about-content">
-    <div class="about-text">
-      <h2>Who We Are</h2>
-      <p>
-        Founded in 2025, Mzanzihire is a modern job platform built for South Africans by South Africans. Our mission is to make job searching and hiring simple, transparent, and accessible for everyone.
-      </p>
-      <h2>What We Do</h2>
-      <p>
-        We help job seekers find meaningful work and help employers discover the right talent. Our platform features curated job listings, career resources, and tools for both candidates and companies.
-      </p>
-      <div class="about-values">
-        <div class="value-card">
-          <h3>Empowerment</h3>
-          <p>We empower individuals to take charge of their careers and futures.</p>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>About <span style="color:#3804bd;">Mzanzi</span><span style="color: #f60a0a;">Hire</span></h1>
+      <p class="tagline">Connecting South Africa's brightest talent with exceptional opportunities across the continent and beyond.</p>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">10K+</span>
+          <span class="stat-label">Job Seekers</span>
         </div>
-        <div class="value-card">
-          <h3>Trust</h3>
-          <p>We build trust through transparency, fairness, and support.</p>
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Companies</span>
         </div>
-        <div class="value-card">
-          <h3>Innovation</h3>
-          <p>We use technology to make hiring and job searching smarter and easier.</p>
+        <div class="stat-item">
+          <span class="stat-number">95%</span>
+          <span class="stat-label">Success Rate</span>
         </div>
       </div>
     </div>
-    <div class="about-image">
-      <img src="assets/mzanzi.jpg" alt="Mzanzihire Team" height="100%">
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Our Story Section -->
+    <section class="section">
+      <div class="story-section">
+        <div class="story-content">
+          <h2>Our Story</h2>
+          <p>
+            Founded in 2025, MzanziHire emerged from a simple yet powerful vision: to bridge the gap between exceptional South African talent and meaningful career opportunities. We recognized that our continent is rich with skilled professionals who deserve access to world-class opportunities.
+          </p>
+          <p>
+            What started as a local initiative has grown into a comprehensive platform that serves job seekers, employers, and the broader professional community across South Africa and beyond.
+          </p>
+          <p>
+            Today, we're proud to be at the forefront of transforming how talent connects with opportunity in the modern African economy.
+          </p>
+        </div>
+        <div class="story-image">
+          <img src="assets/mzanzi.jpg" alt="MzanziHire Team" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="section">
+      <h2 class="section-title">Our Mission & Vision</h2>
+      <p class="section-subtitle">
+        We're committed to creating a future where talent knows no boundaries and opportunities are accessible to all.
+      </p>
+      
+      <div class="story-section">
+        <div class="story-content">
+          <h2>Our Mission</h2>
+          <p>
+            To democratize access to career opportunities by creating an inclusive, transparent, and efficient platform that connects talented individuals with employers who value their skills and potential.
+          </p>
+        </div>
+        <div class="story-content">
+          <h2>Our Vision</h2>
+          <p>
+            To become Africa's leading talent marketplace, where every professional can find their ideal career path and every organization can discover the talent that drives their success.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+      <h2 class="section-title">Our Core Values</h2>
+      <p class="section-subtitle">
+        These principles guide everything we do and shape our commitment to our community.
+      </p>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Innovation</h3>
+          <p>We continuously evolve our platform using cutting-edge technology to create better experiences for job seekers and employers alike.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Trust & Transparency</h3>
+          <p>We build lasting relationships through honest communication, fair practices, and transparent processes that benefit everyone.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Inclusivity</h3>
+          <p>We celebrate diversity and ensure that opportunities are accessible to all, regardless of background, location, or circumstances.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Excellence</h3>
+          <p>We strive for excellence in everything we do, from our platform features to our customer service and community support.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Empowerment</h3>
+          <p>We empower individuals to take control of their careers and help businesses find the talent they need to thrive and grow.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-globe-africa"></i>
+          </div>
+          <h3>African Pride</h3>
+          <p>We're proudly African, showcasing the incredible talent our continent has to offer to the world while supporting local growth.</p>
+        </div>
+      </div>
+    </section>
+
+          
+  </main>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Start Your Journey?</h2>
+      <p class="cta-text">
+        Whether you're looking for your next career opportunity or searching for exceptional talent, 
+        MzanziHire is here to help you succeed.
+      </p>
+      <div class="cta-buttons">
+        <a href="Job Listing.html" class="btn btn-primary">
+          <i class="fas fa-search"></i>
+          Find Jobs
+        </a>
+        <a href="#" class="btn btn-secondary">
+          <i class="fas fa-building"></i>
+          Post a Job
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="about-footer">
-    &copy; 2025 Mzanzihire. All rights reserved.
-  </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="Privacy&Policy.html">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        
+       
+      </div>
+      <p>&copy; 2025 MzanziHire. All rights reserved. Empowering African talent, one opportunity at a time.</p>
+    </div>
+  </footer>
 </body>
 </html>
