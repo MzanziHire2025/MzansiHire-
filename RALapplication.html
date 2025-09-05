@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Apply – Roads Agency Limpopo (RAL)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #222;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+    header {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      background: #003366;
+      color: #fff;
+    }
+    header h1 { margin: 0; font-size: 24px; }
+    .subtitle { font-size: 14px; color: #e0e0e0; margin-top: 4px; }
+    .content { padding: 20px; }
+    .section-title { font-size: 18px; margin: 16px 0 8px; color: #003366; }
+    ul.notes { padding-left: 20px; }
+    ul.notes li { margin: 8px 0; line-height: 1.5; }
+    .address-grid { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+    .address { flex: 1; min-width: 220px; border: 1px solid #eee; border-radius: 6px; padding: 12px; background: #fafafa; }
+    .address h4 { margin: 0 0 6px; font-size: 15px; color: #003366; }
+    address { font-style: normal; line-height: 1.4; }
+    .toolbar { display: flex; gap: 12px; padding: 16px; border-top: 1px solid #eee; background: #f1f1f1; }
+    button.btn {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 6px;
+      background: #003366;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button.btn:hover { background: #0055aa; }
+    .muted { color: #555; font-size: 14px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>How to Apply</h1>
+      <p class="subtitle">Roads Agency Limpopo (RAL) – Application Instructions</p>
+    </header>
+
+    <div class="content">
+      <h3 class="section-title">Please note</h3>
+      <ul class="notes">
+        <li>All applicants must have a Matric/Grade 12 certificate or an equivalent qualification and must be computer literate.</li>
+        <li>The application must include certified copies of the applicant’s academic transcript, educational qualifications, and identity document.</li>
+        <li>A detailed CV, including at least two contactable referees, must be submitted along with a cover letter clearly stating the position.</li>
+        <li>Applicants with foreign qualifications remain responsible for ensuring that their qualifications are evaluated by the South African Qualification Authority (SAQA) and must attach certified copies of certificates of evaluation by SAQA.</li>
+        <li>Incomplete applications or failure to submit any of the required documents will result in disqualification.</li>
+        <li>Correspondence will be limited to shortlisted candidates only.</li>
+      </ul>
+
+      <h3 class="section-title">Where to send applications</h3>
+      <div class="address-grid">
+        <div class="address">
+          <h4>Post applications to</h4>
+          <address>
+            Human Resource Management Division<br />
+            Roads Agency Limpopo (RAL)<br />
+            Private Bag X9554<br />
+            Polokwane<br />
+            0700
+          </address>
+        </div>
+        <div class="address">
+          <h4>Or hand deliver to</h4>
+          <address>
+            26 Rabe Street<br />
+            Polokwane<br />
+            0699
+          </address>
+        </div>
+        <div class="address">
+          <h4>Address applications to</h4>
+          <address>
+            Human Resource Management Division,<br />
+            Roads Agency Limpopo (RAL)
+          </address>
+        </div>
+      </div>
+
+      <p class="muted">Tip: Use a large, clearly labeled envelope for posted applications and keep copies of all documents.</p>
+    </div>
+
+    <div class="toolbar">
+      <button id="printBtn" class="btn">Print / Save as PDF</button>
+      <button id="copyBtn" class="btn">Copy text</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('printBtn').addEventListener('click', function () {
+      // This will always trigger the browser print dialog
+      window.print();
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', async function () {
+      const textToCopy = document.querySelector('.container').innerText;
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        this.textContent = 'Copied!';
+      } catch (err) {
+        // fallback method if clipboard API not available
+        const ta = document.createElement('textarea');
+        ta.value = textToCopy;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); this.textContent = 'Copied!'; }
+        catch (e) { this.textContent = 'Copy failed'; }
+        document.body.removeChild(ta);
+      }
+      setTimeout(() => { this.textContent = 'Copy text'; }, 2000);
+    });
+  </script>
+</body>
+</html>
