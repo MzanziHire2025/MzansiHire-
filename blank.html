@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MZANZIHIRE</title>
+  <style>
+    /* --- Base --- */
+    body { margin: 0; font-family: sans-serif; }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* --- Toggle Button --- */
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .menu-toggle svg { width: 24px; height: 24px; }
+    .menu-toggle .icon-close { display: none; }
+
+    /* --- Nav Links --- */
+    #primary-navigation {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: none;                /* hidden by default on mobile */
+      flex-direction: column;
+      width: 100%;
+      background: #f9f9f9;
+    }
+    #primary-navigation.is-open { display: flex; }
+    #primary-navigation li { border-top: 1px solid #eee; }
+    #primary-navigation a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+    }
+    #primary-navigation a:hover { background: #eee; }
+
+    /* --- Desktop --- */
+    @media (min-width: 768px) {
+      .menu-toggle { display: none; }
+      #primary-navigation {
+        display: flex !important;
+        flex-direction: row;
+        gap: 16px;
+        background: transparent;
+      }
+      #primary-navigation li { border: none; }
+      #primary-navigation a { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">MZANZI<span style="color: #f60a0a;">HIRE</span></a>
+
+      <!-- Hamburger / Close -->
+      <button class="menu-toggle" id="menu-toggle">
+        <!-- Hamburger icon -->
+        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close icon -->
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Links -->
+      <ul id="primary-navigation" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="AboutUs.html">About</a></li>
+        <li><a href="Job Listing.html">Jobs</a></li>
+        <li><a href="https://resumake.io/generator/templates">Create CV</a></li>
+        <li><a href="Resources.html" style="color: #667eea;">Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("primary-navigation");
+    const iconMenu = toggle.querySelector(".icon-menu");
+    const iconClose = toggle.querySelector(".icon-close");
+
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      iconMenu.style.display = open ? "none" : "block";
+      iconClose.style.display = open ? "block" : "none";
+    });
+  </script>
+
+</body>
+</html>
