@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-7N1DYuLckUFS6X8GrgnfMKz5UZ63MCbFB3olSz97nKXP+q09r5FDrS8v6z6H2KeTLEh7bCz0y5uBt3V+pJbFJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Job Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #e9e9e9;
+      color: #fff;
+      padding: 10px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 29px;
+      color: #3804bd;
+    }
+
+    nav {
+      background-color: #000000;
+      padding: 10px 20px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-right: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 30px auto;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    a{
+        text-decoration: none;
+        font-weight: bolder;
+        color: #007bff;
+    }
+
+    .main {
+      flex: 3;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .main img {
+      max-width: 200px;
+      margin: 20px 0;
+    }
+
+    .sidebar {
+      flex: 1;
+      
+    }
+
+    .sidebar .box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar .box h3 {
+      border-left: 5px solid #000000;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .sidebar input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar button {
+      background: #007bff;
+      border: none;
+      color: #fff;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .job-meta {
+      color: #000000;
+      font-size: 14px;
+    }
+
+ /* 🔥 Fresh Mobile Navbar Styles */
+.navbar {
+  background-color: #e9e9e9;
+  color: rgb(247, 242, 242);
+  font-size: 14px;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  font-size: 20px;
+  color: #3804bd;
+  margin: 0;
+}
+
+.site-title span {
+  color: #f60a0a;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-links a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: #3804bd;
+}
+
+/* Hide on mobile */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #000000;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #111;
+    flex-direction: column;
+    align-items: center; /* 👈 CENTER THEM LINKS */
+    padding: 10px 0;
+    display: none;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: slideDown 0.3s ease-in-out forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #e9e9e9;
+    padding: 10px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .nav-links a {
+    padding: 10px 20px;
+    display: block;
+    border-top: 1px solid #333;
+  }
+
+  .nav-logo {
+    display: block;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+
+        .sidebar .box {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.sidebar .box h3 {
+  border-left: 4px solid #000;
+  padding-left: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sidebar input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sidebar button {
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 6px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 13px;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+   
+
+    .job-meta span {
+      margin-right: 15px;
+    }
+
+    
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .apply-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #007b5e;
+      color: #000000;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .apply-button:hover {
+      background-color: #f60a0a;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      nav a {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <h1 class="site-title">Mzanzi<span>Hire</span></h1>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <div class="nav-links" id="nav-links">
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="AboutUs.html"><i class="fas fa-info-circle"></i> About Us</a>
+  <a href="Job Listing.html"><i class="fas fa-briefcase"></i> Jobs</a>
+  <a href="https://resumake.io/generator/templates"><i class="fas fa-tools"></i> Create CV</a>
+</div>
+
+  </div>
+</nav>
+
+
+
+  
+
+  <div class="container">
+    <!-- Main Job Content -->
+    <div class="main">
+      
+      
+      <div class="job-meta">
+        
+           <h2>Learnership</h2>
+      
+        <span>Company: FNB</span>
+        <br>
+        <span>Location: 📍Johannesburg</span>
+        <br>
+        <span>Date Posted:  07 October 2025</span>
+        <br>
+        <span>Closing Date: 10 October 2025</span>
+    <br>
+        
+      </div>
+      <p><a href="https://chat.whatsapp.com/JBPXf0y6kxEL56Zdh890mb?mode=ac_t">Join MzanziHire WhatsApp Group</a></p>
+
+      <img style="width: 120px; height: 120px; border-radius: 5px;" src="assets/FNB_Color.webp" alt="Company Logo">
+
+
+      <div class="section-title">Requirements</div>
+      <ul>
+<li>Be between the ages of 18 and 34.</li>
+<li>Be A South African citizen.</li>
+<li>Have a minimum of a matric certificate (further studies – certificates and diplomas are accepted equal to NQF 5 and 6).</li>
+<li>Have been unemployed for at least the last 6 months.</li>
+<li>Not studying at present.</li>
+<li>Have little or no work experience – i.e., a total of less than twelve months’ work experience and/or of a part-time, casual nature. This must be the youth’s FIRST job experience..</li>
+<li>Not have previously participated in the FirstJob programme at any of the FirstRand franchises, and not worked for FirstRand before.</li>
+<li>Have a Good command of the English language.</li>
+<li>Not have a criminal record.</li>
+<li>Do not be Blacklisted.</li>
+<li>Be willing to do a learnership and gain work experience at the same time.</li>
+</ul>
+    
+
+       
+     <a href="https://auth.sayouth.mobi/Terms/TermsReview?EncodedInvolvedPartyID=NwA0ADcAMgA3ADAAOAA&returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3D4F4133BA-117B-4E4E-932C-CAE6F58E944A%26redirect_uri%3Dhttps%253A%252F%252Fsayouth.mobi%252Fsignin-oidc%26response_type%3Dcode%26scope%3Dopenid%2520profile%26code_challenge%3D5z_bO3jKOke1C-RKqD58hdSHktlpe3KbULdHZioqvJY%26code_challenge_method%3DS256%26response_mode%3Dform_post%26nonce%3D638954150660281984.MjdhYjE2OTAtOWZiOS00NWM3LTg3NjUtNWRjMzc2Y2IwYTJhMWUxMzBhNzctMmM0NC00NzBkLTgyYjMtOTA5YTUxY2I2MGI1%26txnID%3D59c6565d-e5ec-49f2-9b31-81f13f542f5c%26state%3DCfDJ8AzZa0lKxRZAr06f-E6MJaSQHpw-JJOGJaSeHbVLcx8oqzxYzMkB9RUXQLcgtSt0HbFndbVcvWpduNeOt5xnSyN0TsSpaOF1pzOUyUufGk_Y6PXrZqKkWay8MlXbI8HjvlOR2AKqlemlpjXDfUOSLNptneNFqEqxJ7d0YFoPO2hcwzIF7Pt8BGl1uZ-jKcbTtCM_R9sdn8n9Pephgv7NNN9BhJHaII6cWTGD-y-zpYqDdR2_aRn92-o2pDCWslUlEVkH52oM6WpWUNIxKzkiRjao7ys-DMvEWlV7sUDjzRB-xhfsCH_QW5C0Je2HHP5nFPP_Lq82XOOS85pnf4bfeAO_w5kUqHZwXYm2deuyjLx1UyuFNjp_avhWIG0ni3HbHHDE0YSs8hyLfNvs7TGXQNlIKAIoKggAekWAQj-P5xJpA39FQsLfucaTt1furNuQa8BO7_8QCQ6dJ2xHkw27xyPo1qIPi_AUAFHGHrP22iMt2WwyxP8DqClFiAC6f-BRttrEp6QPBEJ6XJA5Kzkt2TdwE6MOojyb71ve16cKqc-I%26x-client-SKU%3DID_NET8_0%26x-client-ver%3D7.5.1.0" 
+   class="apply-button"
+   onclick="window.open('https://www.revenuecpmgate.com/j95cf09s?key=bdc07311991d4684e8c04c72e8971996', '_blank');">
+   Apply Now
+</a>
+
+
+     
+     
+    </div>
+
+    <div class="sidebar">
+  <!-- 🔍 Job Search -->
+  <div class="box">
+    <h3><i class="fas fa-search"></i> Job Search</h3>
+    <form action="Job Listing.html" method="GET" onsubmit="return validateSearch()">
+  <input type="text" name="q" id="searchInput" placeholder="Search jobs..." />
+  <button type="submit">Search</button>
+</form>
+
+  </div>
+
+  
+
+  <!-- 🆕 Latest Job Posts -->
+  <div class="box">
+    <h3><i class="fas fa-bolt"></i> Resources & Tools</h3>
+    <ul style="font-size: 13px;">
+      <li><a href="interviews.html">Interview Tips</a></li>
+      <li><a href="Free-Courses.html">Free Online Courses</a></li>
+      <li><a href="Resources.html">Skill Building</li>
+      <li><a href="Resources.html">Government Jobs</a></li>
+      <li><a href="Resources.html">Career News</a></li>
+      
+    </ul>
+  </div>
+
+  
+
+  <!-- 📞 Contact/Help -->
+  <div class="box">
+    <h3><i class="fas fa-life-ring"></i> Help & Support</h3>
+    <ul style="font-size: 13px;">
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="Contact Us.html">Contact Us</a></li>
+      <li><a href="Privacy&Policy.html">Privacy & Policy</a></li>
+      <li><a href="Terms of Service.html">Terms of Service</a></li>
+    </ul>
+  </div>
+</div>
+
+  </div>
+  
+
+<script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
+
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
+<script>
+  function validateSearch() {
+    const input = document.getElementById("searchInput").value.trim();
+    if (input === "") {
+      alert("Please enter a search term.");
+      return false;
+    }
+    return true;
+  }
+</script>
+
+
+
+<script src="main.js"></script>
+</body>
+</html>
